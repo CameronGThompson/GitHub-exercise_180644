@@ -9,6 +9,10 @@ import matplotlib.pyplot as plt
 # Read sequences
 # -----------------------------
 
+# use an input function to ask the user to enter a FASTA filename
+input("Enter FASTA filename: ")
+
+
 file_path = "input.fas"
 sequences = list(SeqIO.parse(file_path, "fasta"))
 
