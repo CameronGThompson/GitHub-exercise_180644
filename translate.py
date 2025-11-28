@@ -3,6 +3,7 @@ from Bio.SeqUtils.ProtParam import ProteinAnalysis
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
+import matplotlib.pyplot as plt
 
 # -----------------------------
 # Read sequences
@@ -93,6 +94,21 @@ for record in aa_sequences:
 
 df = pd.DataFrame(results)
 print(df.head())
+
+# -----------------------------------------------------------
+# Plot a scatter plot of sequence length vs molecular weight
+# -----------------------------------------------------------
+
+df.plot(
+    kind="scatter",
+    x="length",
+    y="molecular_weight",
+    color="teal"
+)
+plt.xlabel("Sequence Length (bp)")
+plt.ylabel("Molecular Weight (kDA)")
+plt.title("Sequence Length vs Molecular Weight")
+plt.show()
 
 # -----------------------------
 # END
